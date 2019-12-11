@@ -15,7 +15,7 @@ __author__ = 'Lev Kokotov <lev.kokotov@instacart.com>'
 body = json.loads(sys.stdin.read())
 
 if 'Parameters' not in body:
-    print('Input is not valid AWS CLI response. JSON object. with "Parameters" key required.')
+    print('Input is not valid AWS CLI response JSON object with "Parameters" key required.')
     exit(1)
 
 parameters = body['Parameters']
