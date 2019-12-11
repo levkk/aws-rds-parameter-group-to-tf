@@ -3,7 +3,7 @@
 # Convert RDS parameter group intom a TF parameter group.
 #
 # Usage:
-#   aws rds describe-db-parameters --db-parameter-group-name customers-logs-primary | python3 convert.py
+#   aws rds describe-db-parameters --db-parameter-group-name your-parameter-group-name | python3 convert.py
 #
 
 import json
