@@ -30,7 +30,7 @@ for parameter in parameters:
     print('  parameter {')
     print('    apply_method = "immediate"')
     print('    name         = "{}"'.format(parameter['ParameterName']))
-    print('    value        = "{}" # {}'.format(parameter['ParameterValue'], parameter['Description']))
+    print('    value        = "{}" # {}'.format(parameter['ParameterValue'], parameter['Description'].replace('\n', ' ').strip()))
     print('  }')
 
 print('}')
