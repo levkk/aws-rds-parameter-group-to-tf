@@ -28,7 +28,7 @@ for parameter in parameters:
     if 'ParameterValue' not in parameter:
         continue
     print('  parameter {')
-    print('    apply_method = "immediate"')
+    print('    apply_method = "pending-reboot"')
     print('    name         = "{}"'.format(parameter['ParameterName']))
     print('    value        = "{}" # {}'.format(parameter['ParameterValue'], parameter['Description'].replace('\n', ' ').strip()))
     print('  }')
