@@ -8,15 +8,15 @@
 
 import json
 import sys
+import subprocess
+import click
 
-VERSION = '1.1.1'
+VERSION = '1.2.1'
 
 __version__ = VERSION
 __author__ = 'Lev Kokotov <lev.kokotov@instacart.com>'
 
-def main():
-    body = json.loads(sys.stdin.read())
-
+def main(body):
     if 'Parameters' not in body:
         print('Input is not valid AWS CLI response JSON object with "Parameters" key required.')
         exit(1)
@@ -38,3 +38,19 @@ def main():
         print('  }')
 
     print('}')
+
+@click.command()
+@click.option('--name', required=False, help='The name of the parameter group in RDS.')
+@click.option('--stdin', required=False, help='Get the JSON payload from stdin instead.')
+def cli(name, stdin):
+    if name:
+        result = subprocess.check_output(['aws', 'rds', 'describe-db-parameters', '--db-parameter-group-name', name])
+        body = json.loads(result)
+        main(body)
+    elif stdin:
+        body = json.loads(sys.stdin.read())
+        main(body)
+    else:
+        ctx = click.get_current_context()
+        click.echo(ctx.get_help())
+        ctx.exit()

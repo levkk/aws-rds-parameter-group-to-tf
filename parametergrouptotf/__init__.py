@@ -1,1 +1,1 @@
-from .convert import VERSION, main
+from .convert import VERSION, cli

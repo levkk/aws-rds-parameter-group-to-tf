@@ -14,7 +14,9 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/levkk/aws-rds-parameter-group-to-tf',
-    install_requires=[],
+    install_requires=[
+        'Click>=7.0',
+    ],
     packages=setuptools.find_packages(),
     classifiers=[
         'Programming Language :: Python :: 3',
@@ -24,7 +26,7 @@ setuptools.setup(
     python_requires='>=3',
     entry_points={
         'console_scripts': [
-            'parametergrouptotf = parametergrouptotf:main',
+            'parametergrouptotf = parametergrouptotf:cli',
         ]
     },
 )

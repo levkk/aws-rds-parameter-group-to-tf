@@ -1,3 +1,3 @@
-from .convert import main
+from .convert import cli
 
-main()
+cli(prog_name='parametergrouptotf')
