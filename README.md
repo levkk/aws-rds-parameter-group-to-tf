@@ -2,12 +2,24 @@
 
 Converts AWS RDS Parameter Group to a Terraform object. Helps during database major version upgrades.
 
+## Requirements
+
+1. Python3
+2. A working `awscli` with read access to RDS.
+
+## Installation
+
+`pip install aws-rds-parameter-group-to-tf`
+
 ## Usage
 
+Directly using the CLI:
 ```bash
-$ aws rds describe-db-parameters --db-parameter-group-name your-parameter-group-name | python3 convert.py
+$ aws configure # Make sure you are authenticated with AWS.
+$ parametergrouptotf --name my-db-parameter-group
 ```
 
-## Depedencies
-
-A working `awscli` with read access to RDS.
+Or if you have your parameter group already in JSON format:
+```bash
+$ cat your-param-group.json | parametergrouptotf --stdin
+```
