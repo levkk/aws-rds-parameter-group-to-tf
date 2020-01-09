@@ -1,7 +1,5 @@
 # AWS RDS Parameter Group To Terraform Converter
 
-## AWS RDS Parameter Group Converter to Terraform
-
 Converts AWS RDS Parameter Group to a Terraform object. Helps during database major version upgrades.
 
 ## Usage
