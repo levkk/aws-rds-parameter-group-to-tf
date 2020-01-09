@@ -9,7 +9,7 @@
 import json
 import sys
 
-VERSION = '1.1'
+VERSION = '1.1.1'
 
 __version__ = VERSION
 __author__ = 'Lev Kokotov <lev.kokotov@instacart.com>'
