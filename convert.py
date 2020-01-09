@@ -9,7 +9,7 @@
 import json
 import sys
 
-__version__ = 1.0
+__version__ = 1.1
 __author__ = 'Lev Kokotov <lev.kokotov@instacart.com>'
 
 body = json.loads(sys.stdin.read())
@@ -27,8 +27,9 @@ for parameter in parameters:
         continue
     if 'ParameterValue' not in parameter:
         continue
+    apply_method = "immediate" if parameter['ApplyType'] == "dynamic" else "pending-reboot"
     print('  parameter {')
-    print('    apply_method = "pending-reboot"')
+    print('    apply_method = "{}"'.format(apply_method))
     print('    name         = "{}"'.format(parameter['ParameterName']))
     print('    value        = "{}" # {}'.format(parameter['ParameterValue'], parameter['Description'].replace('\n', ' ').strip()))
     print('  }')
