@@ -27,7 +27,7 @@ for parameter in parameters:
         continue
     if 'ParameterValue' not in parameter:
         continue
-    apply_method = "immediate" if parameter['ApplyType'] == "dynamic" else "pending-reboot"
+    apply_method = 'immediate' if parameter['ApplyType'] == 'dynamic' else 'pending-reboot'
     print('  parameter {')
     print('    apply_method = "{}"'.format(apply_method))
     print('    name         = "{}"'.format(parameter['ParameterName']))
