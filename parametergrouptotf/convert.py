@@ -46,7 +46,7 @@ def write_parameter(parameter):
     if 'ParameterValue' not in parameter:
         return
     apply_method = 'immediate' if parameter['ApplyType'] == 'dynamic' else 'pending-reboot'
-    print('# source: {}'.format(parameter['Source']))
+    print('  # source: {}'.format(parameter['Source']))
     print('  parameter {')
     print('    apply_method = "{}"'.format(apply_method))
     print('    name         = "{}"'.format(parameter['ParameterName']))
