@@ -11,7 +11,7 @@ import sys
 import subprocess
 import click
 
-VERSION = '1.3.1'
+VERSION = '1.3.2'
 
 __version__ = VERSION
 __author__ = 'Lev Kokotov <lev.kokotov@instacart.com>'
