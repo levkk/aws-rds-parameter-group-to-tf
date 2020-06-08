@@ -59,7 +59,7 @@ def write_parameter(parameter):
 @click.option('--stdin/--internal', required=False, help='Get the JSON payload from stdin instead.')
 def cli(name, stdin):
     if name:
-        result = subprocess.check_output(['aws', 'rds', 'describe-db-parameters', ' ', name])
+        result = subprocess.check_output(['aws', 'rds', 'describe-db-parameters', '--db-parameter-group-name', name])
         body = json.loads(result)
         main(body, name)
     elif stdin:
